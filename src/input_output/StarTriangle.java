@@ -74,6 +74,16 @@ public class StarTriangle {
             System.out.println();
         }
 
+        System.out.println();
+        //Reversed String
+        System.out.println("Reversed Triangle:-");
+        for(int i=0;i<n;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
         sc.close();
     }
 }
