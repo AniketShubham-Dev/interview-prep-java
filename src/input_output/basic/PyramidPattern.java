@@ -1,25 +1,27 @@
-package input_output;
+package input_output.basic;
 
 import java.util.Scanner;
 
 /**
- * Problem: Print Star Triangle Pattern
+ * Problem: Print Pyramid Pattern
  *
  * ------------------------------------------------------
  * Pattern:
- * *
- * * *
- * * * *
+ *     *
+ *    * *
+ *   * * *
+ *  * * * *
  * * * * *
  *
  * ------------------------------------------------------
  * 🧠 Approach:
- * 1. Outer loop → number of rows
- * 2. Inner loop → print stars equal to row number
+ * 1. Outer loop → rows (1 to n)
+ * 2. First inner loop → print spaces (n - i)
+ * 3. Second inner loop → print stars (i)
  *
  * ------------------------------------------------------
  * ⏱ Time Complexity:
- * O(n^2) → nested loops
+ * O(n^2)
  *
  * 🧠 Space Complexity:
  * O(1)
@@ -31,56 +33,52 @@ import java.util.Scanner;
  *
  * ------------------------------------------------------
  * ⚠️ Common Mistakes:
- * - Wrong loop boundaries
- * - Printing extra spaces or missing stars
+ * - Wrong number of spaces
+ * - Misalignment due to spacing
  *
  * ------------------------------------------------------
  * 🧪 Sample Input:
  * 5
  *
  * 🧪 Sample Output:
- * *
- * * *
- * * * *
+ *     *
+ *    * *
+ *   * * *
+ *  * * * *
  * * * * *
  *
  * ------------------------------------------------------
  * 💡 Why This Problem?
- * Builds strong foundation for nested loops and pattern recognition
+ * Builds visualization + multi-loop control
  *
  * ------------------------------------------------------
  * 🧩 Pattern:
- * Increasing Triangle Pattern
+ * Space + Star Combination Pattern
  */
-public class StarTriangle {
+public class PyramidPattern {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        // Step 1: Take input
+        // Step 1: Input
         System.out.print("Enter number of rows: ");
         int n = sc.nextInt();
 
         // Step 2: Outer loop (rows)
         for (int i = 1; i <= n; i++) {
 
-            // Step 3: Inner loop (stars)
+            // Step 3: Print spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+
+            // Step 4: Print stars
             for (int j = 1; j <= i; j++) {
                 System.out.print("* ");
             }
 
-            // Move to next line after each row
-            System.out.println();
-        }
-
-        System.out.println();
-        //Reversed String
-        System.out.println("Reversed Triangle:-");
-        for(int i=0;i<n;i++){
-            for(int j=1;j<=n-i;j++){
-                System.out.print("* ");
-            }
+            // Move to next line
             System.out.println();
         }
 

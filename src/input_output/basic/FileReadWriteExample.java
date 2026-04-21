@@ -1,4 +1,4 @@
-package input_output;
+package input_output.basic;
 
 import java.io.*;
 

@@ -1,30 +1,25 @@
-package input_output;
+package input_output.basic;
 
 import java.util.Scanner;
 
 /**
- * Problem: Print Diamond Pattern
+ * Problem: Print Star Triangle Pattern
  *
  * ------------------------------------------------------
  * Pattern:
- *     *
- *    * *
- *   * * *
- *  * * * *
- * * * * * *
- *  * * * *
- *   * * *
- *    * *
- *     *
+ * *
+ * * *
+ * * * *
+ * * * * *
  *
  * ------------------------------------------------------
  * 🧠 Approach:
- * 1. Print upper pyramid (1 to n)
- * 2. Print lower reverse pyramid (n-1 to 1)
+ * 1. Outer loop → number of rows
+ * 2. Inner loop → print stars equal to row number
  *
  * ------------------------------------------------------
  * ⏱ Time Complexity:
- * O(n^2)
+ * O(n^2) → nested loops
  *
  * 🧠 Space Complexity:
  * O(1)
@@ -36,71 +31,56 @@ import java.util.Scanner;
  *
  * ------------------------------------------------------
  * ⚠️ Common Mistakes:
- * - Printing middle row twice
- * - Incorrect spacing logic
+ * - Wrong loop boundaries
+ * - Printing extra spaces or missing stars
  *
  * ------------------------------------------------------
  * 🧪 Sample Input:
  * 5
  *
  * 🧪 Sample Output:
- *     *
- *    * *
- *   * * *
- *  * * * *
- * * * * * *
- *  * * * *
- *   * * *
- *    * *
- *     *
+ * *
+ * * *
+ * * * *
+ * * * * *
  *
  * ------------------------------------------------------
  * 💡 Why This Problem?
- * Combines multiple patterns → tests strong loop control
+ * Builds strong foundation for nested loops and pattern recognition
  *
  * ------------------------------------------------------
  * 🧩 Pattern:
- * Pyramid + Reverse Pyramid
+ * Increasing Triangle Pattern
  */
-public class DiamondPattern {
+public class StarTriangle {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        // Input
+        // Step 1: Take input
         System.out.print("Enter number of rows: ");
         int n = sc.nextInt();
 
-        // 🔼 Upper Pyramid
+        // Step 2: Outer loop (rows)
         for (int i = 1; i <= n; i++) {
 
-            // Spaces
-            for (int j = 1; j <= n - i; j++) {
-                System.out.print(" ");
-            }
-
-            // Stars
+            // Step 3: Inner loop (stars)
             for (int j = 1; j <= i; j++) {
                 System.out.print("* ");
             }
 
+            // Move to next line after each row
             System.out.println();
         }
 
-        // 🔽 Lower Reverse Pyramid
-        for (int i = n - 1; i >= 1; i--) {
-
-            // Spaces
-            for (int j = 1; j <= n - i; j++) {
-                System.out.print(" ");
-            }
-
-            // Stars
-            for (int j = 1; j <= i; j++) {
+        System.out.println();
+        //Reversed String
+        System.out.println("Reversed Triangle:-");
+        for(int i=0;i<n;i++){
+            for(int j=1;j<=n-i;j++){
                 System.out.print("* ");
             }
-
             System.out.println();
         }
 

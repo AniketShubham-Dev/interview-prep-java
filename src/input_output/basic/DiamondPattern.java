@@ -1,9 +1,9 @@
-package input_output;
+package input_output.basic;
 
 import java.util.Scanner;
 
 /**
- * Problem: Print Pyramid Pattern
+ * Problem: Print Diamond Pattern
  *
  * ------------------------------------------------------
  * Pattern:
@@ -11,13 +11,16 @@ import java.util.Scanner;
  *    * *
  *   * * *
  *  * * * *
- * * * * *
+ * * * * * *
+ *  * * * *
+ *   * * *
+ *    * *
+ *     *
  *
  * ------------------------------------------------------
  * 🧠 Approach:
- * 1. Outer loop → rows (1 to n)
- * 2. First inner loop → print spaces (n - i)
- * 3. Second inner loop → print stars (i)
+ * 1. Print upper pyramid (1 to n)
+ * 2. Print lower reverse pyramid (n-1 to 1)
  *
  * ------------------------------------------------------
  * ⏱ Time Complexity:
@@ -33,8 +36,8 @@ import java.util.Scanner;
  *
  * ------------------------------------------------------
  * ⚠️ Common Mistakes:
- * - Wrong number of spaces
- * - Misalignment due to spacing
+ * - Printing middle row twice
+ * - Incorrect spacing logic
  *
  * ------------------------------------------------------
  * 🧪 Sample Input:
@@ -45,40 +48,59 @@ import java.util.Scanner;
  *    * *
  *   * * *
  *  * * * *
- * * * * *
+ * * * * * *
+ *  * * * *
+ *   * * *
+ *    * *
+ *     *
  *
  * ------------------------------------------------------
  * 💡 Why This Problem?
- * Builds visualization + multi-loop control
+ * Combines multiple patterns → tests strong loop control
  *
  * ------------------------------------------------------
  * 🧩 Pattern:
- * Space + Star Combination Pattern
+ * Pyramid + Reverse Pyramid
  */
-public class PyramidPattern {
+public class DiamondPattern {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        // Step 1: Input
+        // Input
         System.out.print("Enter number of rows: ");
         int n = sc.nextInt();
 
-        // Step 2: Outer loop (rows)
+        // 🔼 Upper Pyramid
         for (int i = 1; i <= n; i++) {
 
-            // Step 3: Print spaces
+            // Spaces
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
             }
 
-            // Step 4: Print stars
+            // Stars
             for (int j = 1; j <= i; j++) {
                 System.out.print("* ");
             }
 
-            // Move to next line
+            System.out.println();
+        }
+
+        // 🔽 Lower Reverse Pyramid
+        for (int i = n - 1; i >= 1; i--) {
+
+            // Spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+
+            // Stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+
             System.out.println();
         }
 
